@@ -21,14 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start_dev": "export REACT_APP_STAGE=dev && export REACT_APP_REGION=us-west-2 && export REACT_APP_USER_POOL_ID=us-west-2_J0xw1Ajuw && export REACT_APP_APP_CLIENT_ID=5vh199frcm3brleei5audf2o7o && export REACT_APP_IDENTITY_POOL_ID=us-west-2:b19a1508-72fa-462b-93df-6187ba1f71f1 && react-scripts start",
-    "start_test": "export REACT_APP_STAGE=test && export REACT_APP_REGION=us-west-2 && export REACT_APP_USER_POOL_ID=us-west-2_I5ADTT4ai && export REACT_APP_APP_CLIENT_ID=1jb5mc8ie41s908hni6ar87o6p && export REACT_APP_IDENTITY_POOL_ID=us-west-2:31d6548f-0d7d-448c-8608-eb13fee17c35 && react-scripts start",
-    "start_prod": "export REACT_APP_STAGE=prod && export REACT_APP_REGION=us-west-2 && export REACT_APP_USER_POOL_ID=us-west-2_yQfVXPlY8 && export REACT_APP_APP_CLIENT_ID=5o99e2pi3np1vbml894624635 && export REACT_APP_IDENTITY_POOL_ID=us-west-2:6d1177b3-76dc-4858-9f5c-4b26a99b2275 && react-scripts start",
     "build": "react-scripts build",
-    "build_dev": "export REACT_APP_STAGE=dev && export REACT_APP_REGION=us-west-2 && export REACT_APP_USER_POOL_ID=us-west-2_J0xw1Ajuw && export REACT_APP_APP_CLIENT_ID=5vh199frcm3brleei5audf2o7o && export REACT_APP_IDENTITY_POOL_ID=us-west-2:b19a1508-72fa-462b-93df-6187ba1f71f1 && react-scripts build",
-    "build_test": "export REACT_APP_STAGE=test && export REACT_APP_REGION=us-west-2 && export REACT_APP_USER_POOL_ID=us-west-2_I5ADTT4ai && export REACT_APP_APP_CLIENT_ID=1jb5mc8ie41s908hni6ar87o6p && export REACT_APP_IDENTITY_POOL_ID=us-west-2:31d6548f-0d7d-448c-8608-eb13fee17c35 && react-scripts build",
-    "build_prod": "export REACT_APP_STAGE=prod && export REACT_APP_REGION=us-west-2 && export REACT_APP_USER_POOL_ID=us-west-2_yQfVXPlY8 && export REACT_APP_APP_CLIENT_ID=5o99e2pi3np1vbml894624635 && export REACT_APP_IDENTITY_POOL_ID=us-west-2:6d1177b3-76dc-4858-9f5c-4b26a99b2275 && react-scripts build",
-    "test:nowatch": "CI=true react-scripts test  --env=jsdom",
     "test": "react-scripts test"
   },
   "jest": {
