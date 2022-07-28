@@ -1,31 +1,35 @@
-// MUI
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import React from "react"
 
-import Routes from "./components/Routes/Routes";
+// MUI
+import {AppBar, Container, Typography} from '@material-ui/core';
+
+// Custom
+import ClickGrid from './components/ClickGrid'
 
 export default function App() {
-  const theme = createMuiTheme({
-    typography: {
-      fontFamily: 'Roboto Slab',
-    },
-    palette: {
-      primary: {
-        main: "#F37A1F",
-      },
-      secondary: {
-        main: "#393939"
-      },
-      info: {
-        main: "#393939"
-      },
-    },
-  });
-
   return (
-    <div >
-      <ThemeProvider theme={theme}>
-          <Routes />
-      </ThemeProvider>
-    </div>
+    <Container>
+      <AppBar position="static">
+        <Container maxWidth="xl">
+          <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              sx={{
+                mr: 2,
+                display: { xs: 'none', md: 'flex' },
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'white',
+                textDecoration: 'none',
+              }}
+            >
+              CLICK A BOX
+          </Typography>
+        </Container>
+      </AppBar>
+      <ClickGrid />
+    </Container>
   );
 }

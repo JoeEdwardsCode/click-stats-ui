@@ -1,10 +1,9 @@
 // React Dependencies
 import React from "react"
-import { BrowserRouter as Router } from "react-router-dom";
 import ReactDOM from 'react-dom';
 
 // 3rd party modules
-import Amplify, { Auth } from 'aws-amplify';
+import Amplify from 'aws-amplify';
 
 // Busquo components
 import App from './App';
@@ -24,9 +23,7 @@ Amplify.configure({
 
 ReactDOM.render(
     <React.Fragment>
-        <Router >
-            <App />
-        </Router>
+        <App />
     </React.Fragment>,
     document.getElementById("root")
 );
