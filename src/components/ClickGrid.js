@@ -6,6 +6,8 @@ import { makeStyles } from '@material-ui/core/styles'
 
 import {BsCircleFill, BsFillHexagonFill, BsStarFill, BsFillTriangleFill} from 'react-icons/bs'
 
+import { API } from "aws-amplify";
+
 const useStyles = makeStyles(theme => ({
     root: {
         margin: 0
@@ -47,10 +49,10 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const colorMap = {
-    "C":"cPaper",
-    "M":"mPaper",
-    "Y":"yPaper",
-    "K":"kPaper",
+    "CYAN":"cPaper",
+    "MAGENTA":"mPaper",
+    "YELLOW":"yPaper",
+    "BLACK":"kPaper",
 }
 
 const shapeMap = {
@@ -60,12 +62,27 @@ const shapeMap = {
     "TRIANGLE":<BsFillTriangleFill style={{fontSize:'5em'}} />,
 }
 
+const PostClickEvent = async(shape, color, quadrant)=> {
+    return API.post('api', 'click-event', {
+        body:{
+            shape: shape,
+            color: color,
+            quadrant: quadrant
+        }
+    }).then(response => {
+        console.log(response);
+    }).catch(e => {
+        console.log("Posting click-event failed: \n" + JSON.stringify(e));
+    });
+}
+
 const ClickSquare = (props) => {
-    const handleClick = (e) => {
+    const handleClick = async(e) => {
         e.preventDefault();
-        console.log(`SHAPE: ${props.shape} COLOR: ${props.color}, QUADRANT: ${props.quadrant}`);
+        console.log(`SHAPE: ${props.shape}, COLOR: ${props.color}, QUADRANT: ${props.quadrant}`);
+        await PostClickEvent(props.shape, props.color, props.quadrant);
         props.setClickBoxes(getClickBoxes)
-      }
+    }
 
     const classes = useStyles();
     return (
@@ -86,7 +103,7 @@ const ClickSquareWrapper = (props)=> {
 }
 
 const getClickBoxes = ()=> {
-    const colors = ["C", "M", "Y", "K"].sort((a, b) => 0.5 - Math.random());;
+    const colors = ["CYAN", "MAGENTA", "YELLOW", "BLACK"].sort((a, b) => 0.5 - Math.random());;
     const shapes = ["STAR", "CIRCLE", "HEXAGON", "TRIANGLE"].sort((a, b) => 0.5 - Math.random());;
     return [
         new ClickSquareWrapper({color: colors[0], shape: shapes[0], quadrant: "IV"}),
