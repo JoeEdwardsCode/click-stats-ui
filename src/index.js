@@ -14,7 +14,7 @@ Amplify.configure({
         endpoints: [
             {
                 name: "api",
-                endpoint: "https://hjgy7dgana.execute-api.us-west-1.amazonaws.com",
+                endpoint: "https://hjgy7dgana.execute-api.us-west-1.amazonaws.com/",
                 region: "us-west-1",
             },
         ]
